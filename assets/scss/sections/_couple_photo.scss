@@ -10,37 +10,36 @@
         perspective: 1000px;
         .container-photo {
             width: 100%;
-            max-width: 220px;
+            max-width: 297px;
+            aspect-ratio: 297 / 382;
             position: relative;
             @include flex-center;
-            background-color: $primary-color;
-    
-            img {
+
+            .main-photo {
+                max-width: 199px;
+                width: 100%;
+                aspect-ratio: 199 / 286;
+                background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS308606.webp') no-repeat center / 100%;
+                position: absolute;
+                &.nha-trai {
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS308864.webp') no-repeat 24% 100%/ 280%;
+                }
+            }
+
+            .frame-03 {
                 width: 100%;
                 height: auto;
             }
-    
+
             .overlay {
                 position: absolute;
-                bottom: 5%;
+                bottom: 15%;
                 left: 50%;
                 transform: translateX(-50%);
-    
                 img {
                     max-width: 116px;
                     width: 100%;
                     height: auto;
-                }
-            }
-
-            &.nha-trai {
-                aspect-ratio: 220 / 329;
-                overflow: hidden;
-                img {
-                    object-fit: cover;
-                    object-position: 22% 100%;
-                    width: 100%;
-                    height: 100%;
                 }
             }
         }
@@ -51,6 +50,14 @@
         .content {
             .container-photo  {
                 max-width: calc((297 / 500) * 100vw);
+                .main-photo {
+                    max-width: calc((199 / 500) * 100vw);
+                }
+                .overlay {
+                    img {
+                        max-width: calc((116 / 500) * 100vw);
+                    }
+                }
             }
         }
     }

@@ -2,7 +2,8 @@
 @use "../mixins" as *;
 
 .footer {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.113), rgba(0, 0, 0, 0.138)),url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS300085.webp') no-repeat center/cover;
+    // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.113), rgba(0, 0, 0, 0.138)),url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS300085.webp') no-repeat center/cover;
+    background: url(../../assets/images/bg/footer_bg.png) no-repeat center/cover;
     width: 100%;
     aspect-ratio: 500 / 750;
     display: flex;    
@@ -12,15 +13,14 @@
     margin-top: 10%;
     color: white;
     &.nha-trai {
-        aspect-ratio: 500 / 750;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.113), rgba(0, 0, 0, 0.138)), url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS306522.webp') no-repeat 25% 100%/cover;
+        // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.113), rgba(0, 0, 0, 0.138)), url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS306522.webp') no-repeat 25% 100%/cover;
     }
     .logo {
         width: 100%;
         margin-bottom: 10%;
         margin-top: 13%;
         img {
-            width: 80px;
+            width: 139px;
             height: auto;
             object-fit: cover;
         }
@@ -49,7 +49,7 @@
     @media (max-width: 500px) {
         .logo {
             img {
-                width: calc((80 / 500) * 100vw);
+                width: calc((139 / 500) * 100vw);
             }
         }
     

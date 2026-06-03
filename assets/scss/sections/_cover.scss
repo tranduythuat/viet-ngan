@@ -3,38 +3,48 @@
 
 .cover {
     .content {
-        background: url('../../assets/images/bg/hero_bg.webp') no-repeat center/cover;
+        background: url('../../assets/images/bg/cover_bg.png') no-repeat center/cover;
         background-color: $primary-color;
         width: 100%;
         aspect-ratio: 500 / 822;
         @include flex-center;
         flex-direction: column;
         color: #fff;
-        // &.nha-trai {
-        //     font-weight: bold;
-        // }
 
         .names {
             font-family: $font-hero;
             font-size: 44px;
             letter-spacing: 1.4px;
             font-weight: 300;
-            // &.nha-trai {
-            //     font-weight: 600;
-            // }
         }
 
         .photo-frame {
-            max-width: 250px;
+            max-width: 210px;
             width: 100%;
-            aspect-ratio: 2 / 3;
+            aspect-ratio: 210 / 300;
             perspective: 1000px;
             margin: 5% 0;
-            // background-color: $image-bg-color;
-            img {
+            position: relative;
+            @include flex-center;
+            .main-photo {
+                max-width: 128px;
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
+                border-radius: 50%;
+                aspect-ratio: 121 / 162;
+                background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS308506.webp') no-repeat 65% 100%/ 220%;
+                position: absolute;
+                top: 53%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                &.nha-trai {
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS306304.webp') no-repeat 2% 82%/ 110%;
+                }
+            }
+           
+            img.frame-01 {
+                width: 100%;
+                height: auto;
             }
         }
 
@@ -66,9 +76,12 @@
                 font-size: calc((44 / 500) * 100vw);
                 letter-spacing: calc((1.4 / 500) * 100vw);
             }
-    
+
             .photo-frame {
-                max-width: calc((250 / 500) * 100vw);
+                max-width: calc((210 / 500) * 100vw);
+                .main-photo {
+                    max-width: calc((128 / 500) * 100vw);
+                }
             }
     
             .subtext {
