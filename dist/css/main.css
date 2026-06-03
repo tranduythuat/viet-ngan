@@ -355,7 +355,6 @@ section {
   aspect-ratio: 2/3;
   perspective: 1000px;
   margin: 5% 0;
-  background-color: rgba(85, 61, 20, 0.7411764706);
 }
 .cover .content .photo-frame img {
   width: 100%;
