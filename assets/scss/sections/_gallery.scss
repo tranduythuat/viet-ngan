@@ -1,0 +1,203 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.gallery {
+    width: 100%;
+    // background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/bg/gallerey_bg.webp") no-repeat center/contain;
+    aspect-ratio: 500 / 870;
+    margin: 2% 0;
+    @include flex-center;
+
+    .gallery-grid {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row1 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 1%;
+        margin-bottom: 1%;
+        .column1 {
+            flex: 5.5;
+            display: flex;
+            justify-content: end;
+            .photo-box {
+                max-width: 215px;
+                width: 100%;
+                aspect-ratio: 215 / 336;
+                background-color: $primary-color;
+                background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS309004.webp') no-repeat center / cover;
+                &.nha-trai {
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS304746.webp') no-repeat center / cover;
+                }
+            }
+        }
+
+        .column2 {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            .column2_row1 {
+                max-width: 106px;
+                @include flex-center;
+                height: 100%;
+                perspective: 1000px;
+                .icon {
+                    max-width: 87px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .column2_row2 {
+                width: 100%;
+                .photo-box {
+                    max-width: 106px;
+                    width: 100%;
+                    aspect-ratio: 106 / 162;
+                    background-color: $primary-color;
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/1132Lul.webp') no-repeat center / cover;
+                    &.nha-trai {
+                        background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS309143.webp') no-repeat center / cover;
+                    }
+                }
+            }
+        }
+    }
+
+    .row2 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 1%;
+        .column1 {
+            flex: 3.8;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: end;
+            .column1_row1 {
+                width: 100%;
+                display: flex;
+                justify-content: end;
+                .photo-box {
+                    max-width: 162px;
+                    width: 100%;
+                    aspect-ratio: 162 / 251;
+                    background-color: $primary-color;
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/8306.webp') no-repeat center / cover;
+                    &.nha-trai {
+                        background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS306090.webp') no-repeat 42% 100% / cover;
+                    }
+                }
+            }
+            .column1_row2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 162px;
+                width: 100%;
+                height: 100%;
+                perspective: 1000px;
+                .icon {
+                    max-width: 104px;
+                    width: 100%;
+                    height: auto;
+                    // position: relative;
+                    // transform: translate(-28%, 38%);
+                    // right: 50%;
+                }
+            }
+        }
+
+        .column2 {
+            flex: 5;
+            .column2_row1 {
+                width: 100%;
+                margin-bottom: 1.68%;
+                .photo-box {
+                    max-width: 234px;
+                    width: 100%;
+                    aspect-ratio: 234 / 157;
+                    background-color: $primary-color;
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS306522.webp') no-repeat center / cover;
+                    &.nha-trai {
+                        background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS300184.webp') no-repeat 100% 30% / cover;
+                    }
+                }
+            }
+
+            .column2_row2 {
+                width: 100%;
+                .photo-box {
+                    max-width: 182px;
+                    width: 100%;
+                    aspect-ratio: 182 / 260;
+                    background-color: $primary-color;
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/1135Lul.webp') no-repeat 100% 100% / cover;
+                    &.nha-trai {
+                        background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS300085.webp') no-repeat center / cover;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .row1 {
+            .column1 {
+                .photo-box {
+                    max-width: calc((215 / 500) * 100vw);
+                }
+            }
+    
+            .column2 {
+                .column2_row1 {
+                    max-width: calc((106 / 500) * 100vw);
+                    .icon {
+                        max-width: calc((87 / 500) * 100vw);
+                    }
+                }
+                .column2_row2 {
+                    .photo-box {
+                        max-width: calc((106 / 500) * 100vw);
+                    }
+                }
+            }
+        }
+    
+        .row2 {
+            .column1 {
+                .column1_row1 {
+                    .photo-box {
+                        max-width: calc((162 / 500) * 100vw);
+                    }
+                }
+                .column1_row2 {
+                    max-width: calc((162 / 500) * 100vw);
+                    .icon {
+                        max-width: calc((104 / 500) * 100vw);
+                    }
+                }
+            }
+    
+            .column2 {
+                .column2_row1 {
+                    .photo-box {
+                        max-width: calc((234 / 500) * 100vw);
+                    }
+                }
+                .column2_row2 {
+                    .photo-box {
+                        max-width: calc((182 / 500) * 100vw);
+                    }
+                }
+            }
+        }
+    }
+}

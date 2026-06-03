@@ -1,0 +1,64 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.footer {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.113), rgba(0, 0, 0, 0.138)),url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS300085.webp') no-repeat center/cover;
+    width: 100%;
+    aspect-ratio: 500 / 750;
+    display: flex;    
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    margin-top: 10%;
+    color: white;
+    &.nha-trai {
+        aspect-ratio: 500 / 750;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.113), rgba(0, 0, 0, 0.138)), url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/couple/LS306522.webp') no-repeat 25% 100%/cover;
+    }
+    .logo {
+        width: 100%;
+        margin-bottom: 10%;
+        margin-top: 13%;
+        img {
+            width: 80px;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    p.thanks {
+        padding: 0 8%;
+        text-align: justify;
+        text-align-last: center;
+    }
+
+    p.credits {
+        font-family: "UVNKeChuyen3", sans-serif;
+        font-weight: 300;
+        font-size: 25px;
+        padding: 3% 0 10%;
+    }
+
+    p.text-end {
+        text-transform: uppercase;
+        font-size: 10px;
+        margin-bottom: 3%;
+        margin-top: auto;
+    }
+
+    @media (max-width: 500px) {
+        .logo {
+            img {
+                width: calc((80 / 500) * 100vw);
+            }
+        }
+    
+        p.credits {
+            font-size: calc((25 / 500) * 100vw);
+        }
+    
+        p.text-end {
+            font-size: calc((10 / 500) * 100vw);
+        }
+    }
+}

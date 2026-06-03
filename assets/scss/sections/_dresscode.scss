@@ -1,0 +1,104 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.dresscode {
+    width: 100%;
+
+    .content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        perspective: 1000px;
+        padding: 5% 0 10%;
+
+        h2 {
+            font-size: 44px;
+            font-family: $font-hero;
+            font-weight: 300;
+            margin-bottom: 5%;
+            letter-spacing: 2px;
+
+            &.nha-trai {
+                font-weight: bold;
+            }
+        }
+
+        .subtext {
+            letter-spacing: 1.2px;
+            line-height: 1.8;
+
+            .bold {
+                font-weight: 600;
+            }
+        }
+
+        .colors-grid {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            width: 60%;
+            margin-top: 2%;
+
+            .item {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .color {
+                    width: 100%;
+                    @include flex-center;
+
+                    .circle {
+                        max-width: 38px;
+                        width: 100%;
+                        aspect-ratio: 1;
+                        border-radius: 50%;
+                        border: 1px solid rgba(0, 0, 0, 0.105);
+                    }
+                }
+
+                .label {
+                    font-size: 12px;
+                    margin-top: 10%;
+                    text-transform: uppercase;
+                }
+            }
+
+            &.nha-gai {
+                width: 50%;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            h2 {
+                font-size: calc((44 / 500) * 100vw);
+                letter-spacing: calc((2 / 500) * 100vw);
+            }
+
+            .subtext {
+                // font-size: calc((14 /   500) * 100vw);
+            }
+
+
+            .colors-grid {
+                .item {
+                    .color {
+                        .circle {
+                            max-width: calc((38 / 500) * 100vw);
+                        }
+                    }
+
+                    .label {
+                        font-size: calc((12 / 500) * 100vw);
+                    }
+                }
+            }
+        }
+    }
+}

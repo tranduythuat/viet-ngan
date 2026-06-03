@@ -1,0 +1,83 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.timeline {
+    width: 100%;
+    .content {
+        width: 100%;
+        background: url("../../assets/images/bg/timeline_bg.webp") no-repeat center/ contain;
+        aspect-ratio: 500 / 780;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        &.nha-trai {
+            font-weight: bold;
+        }
+        .title {
+            font-family: $font-hero;
+            font-size: 44px;
+            padding-bottom: 9%;
+            font-weight: 300;
+            &.nha-trai {
+                font-weight: bold;
+            }
+            
+        }
+        .timeline-list {
+            .event {
+                padding-bottom: 8%;
+                .icon {
+                    padding-bottom: 1.5%;
+        
+                    img {
+                        width: 30px;
+                        height: auto;
+                    }
+                }
+        
+                p.time {
+                    margin-bottom: .8%;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+                &:nth-child(2) {
+                    .icon {
+                        img {
+                            width: 35px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.nha-gai {
+             background: url("../../assets/images/bg/timeline_bg.webp") no-repeat center/ 80%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .title {
+                font-size: calc((44 / 500) * 100vw);
+            }
+            .timeline-list {
+                .event {
+                    .icon {
+                        img {
+                            width: calc((30 / 500) * 100vw);
+                        }
+                    }
+                    &:nth-child(2) {
+                        .icon {
+                            img {
+                                width:  calc((35 / 500) * 100vw);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

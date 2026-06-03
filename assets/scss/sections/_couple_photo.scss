@@ -1,0 +1,57 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.couple-photo {
+    width: 100%;
+    .content {
+        width: 100%;
+        @include flex-center;
+        padding: 7% 0 18%;
+        perspective: 1000px;
+        .container-photo {
+            width: 100%;
+            max-width: 220px;
+            position: relative;
+            @include flex-center;
+            background-color: $primary-color;
+    
+            img {
+                width: 100%;
+                height: auto;
+            }
+    
+            .overlay {
+                position: absolute;
+                bottom: 5%;
+                left: 50%;
+                transform: translateX(-50%);
+    
+                img {
+                    max-width: 116px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            &.nha-trai {
+                aspect-ratio: 220 / 329;
+                overflow: hidden;
+                img {
+                    object-fit: cover;
+                    object-position: 22% 100%;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+
+    @media (max-width: 500px) {
+        .content {
+            .container-photo  {
+                max-width: calc((297 / 500) * 100vw);
+            }
+        }
+    }
+}
