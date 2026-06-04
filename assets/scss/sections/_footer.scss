@@ -30,6 +30,7 @@
         padding: 0 8%;
         text-align: justify;
         text-align-last: center;
+        font-size: 12px;
     }
 
     p.credits {
@@ -51,6 +52,9 @@
             img {
                 width: calc((139 / 500) * 100vw);
             }
+        }
+        p.thanks {
+            font-size: calc((12 / 500) * 100vw);
         }
     
         p.credits {
