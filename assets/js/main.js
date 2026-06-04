@@ -555,7 +555,7 @@
   /* ======================================================
        RSVP
     ====================================================== */
-  async function handleFormSubmit(e, lang = "vi") {
+  async function handleFormSubmit(e, sheet="nha-trai" ,lang = "vi") {
     e.preventDefault();
 
     const form = e.target;
@@ -576,8 +576,6 @@
       name,
       confirm,
       guest_number,
-      dietary,
-      guest_diatery_number,
       wish,
     } = data;
 
@@ -620,16 +618,16 @@
       didOpen: () => Swal.showLoading(),
     });
 
-    // const SHEET_ENDPOINTS = {
-    //   vow: "?sheet=vow",
-    //   not_vow: "?sheet=not-vow",
-    // };
+    const SHEET_ENDPOINTS = {
+      nha_trai: "https://script.google.com/macros/s/AKfycbxJ0p0DPTL6bM7Wcvv6OV_HR4wicbF4ir54M5RQ4onnOklila5Iy8Po06T_2AN5MVg/exec?sheet=nha-trai",
+      nha_gai: "https://script.google.com/macros/s/AKfycbxJ0p0DPTL6bM7Wcvv6OV_HR4wicbF4ir54M5RQ4onnOklila5Iy8Po06T_2AN5MVg/exec?sheet=nha-gai",
+    };
 
-    // let sheetURL = SHEET_ENDPOINTS.vow;
-    // if (timeline === "v2") {
-    //   sheetURL = SHEET_ENDPOINTS.not_vow
-    // }
-    const sheetURL = '/exec?sheet=confirm';
+    let sheetURL = SHEET_ENDPOINTS.nha_trai;
+    if (sheet === "nha-gai") {
+      sheetURL = SHEET_ENDPOINTS.nha_gai
+    }
+    // const sheetURL = 'https://script.google.com/macros/s/AKfycbxJ0p0DPTL6bM7Wcvv6OV_HR4wicbF4ir54M5RQ4onnOklila5Iy8Po06T_2AN5MVg/exec/exec?sheet=confirm';
 
     try {
       const res = await fetch(sheetURL, {
@@ -639,8 +637,6 @@
           name,
           confirm,
           guest_number,
-          dietary,
-          guest_diatery_number,
           wish,
         }),
       });
@@ -686,9 +682,14 @@
   }
 
   function initRSVP() {
-    const form = document.forms["rsvpForm"];
+    const form = document.forms["rsvpForm-nha-trai"];
     if (form) {
-      form.addEventListener("submit", (e) => handleFormSubmit(e, "vi"));
+      form.addEventListener("submit", (e) => handleFormSubmit(e, "nha-trai", "vi"));
+    }
+
+    const formNhaGai = document.forms["rsvpForm-nha-gai"];
+    if (formNhaGai) {
+      formNhaGai.addEventListener("submit", (e) => handleFormSubmit(e, "nha-gai", "vi"));
     }
   }
 
