@@ -333,7 +333,7 @@ section {
   }
 }
 .cover .content {
-  background: url("../../assets/images/bg/cover_bg.png") no-repeat center/cover;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/cover_bg.webp") no-repeat center/cover;
   background-color: #806331;
   width: 100%;
   aspect-ratio: 500/822;
@@ -1502,7 +1502,7 @@ section {
 }
 
 .footer {
-  background: url(../../assets/images/bg/footer_bg.png) no-repeat center/cover;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/viet-ngan/footer_bg.webp") no-repeat center/cover;
   width: 100%;
   aspect-ratio: 500/750;
   display: flex;
